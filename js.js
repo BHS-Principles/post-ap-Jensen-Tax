@@ -8,7 +8,7 @@ var LIST = [
 var BTN = document.getElementById("myButton");
 
 var theAction = function(event) {
-alert("I love you");
+console.log(event);
 };
 
 
@@ -16,7 +16,7 @@ for (var i = 0; i < 3; i++) {
 var newBTN = BTN.cloneNode(true);
 newBTN.innerHTML = LIST[i];
 document.body.append(newBTN);
-alert("CHECK MeOUT!!!!!!!! "  + LIST[i] );
+//alert("CHECK MeOUT!!!!!!!! "  + LIST[i] );
 
 newBTN.addEventListener("click", theAction);
 };
