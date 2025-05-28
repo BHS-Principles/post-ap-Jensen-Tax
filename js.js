@@ -1,4 +1,4 @@
-alert("PLEASE LET IT WORK!!!!!!!!!!!!!!!!")
+//alert("PLEASE LET IT WORK!!!!!!!!!!!!!!!!")
 var LIST = [
 "tralalero tralala",
 "chicken jockey",
@@ -18,6 +18,7 @@ newBTN.innerHTML = LIST[i];
 document.body.append(newBTN);
 //alert("CHECK MeOUT!!!!!!!! "  + LIST[i] );
 
-newBTN.addEventListener("click", theAction);
+newBTN.addEventListener("click", (e)=>{console.log(e)});
 };
+
 
