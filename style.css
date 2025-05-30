@@ -14,5 +14,5 @@ body *{
     background-color:blue;
     background-image: url(mine.svg);
     background-size: 1300%;
-    background-repeat: no-repeat;
+    background-position: -100rem -30rem;
 }

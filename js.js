@@ -1,4 +1,39 @@
+const { listen } = require("express/lib/application");
+
 alert("PLEASE LET IT WORK!!!!!!!!!!!!!!!!");
+var LIST = [
+{ magicMetal: silver},
+{},
+{},
+{}
+
+
+];
+
+
+var temp = document.getElementById("temp");
+var target = document.getElementById("target");
+
+var card = temp.querySelector(".card")
+
+
+for(var i = 0; i < LIST.length; i++) {
+    var MagicBullet = LIST[i];
+    var copyCard = card.cloneNode(true);
+    copyCard.innerHTML = MagicBullet;
+    target.append(copyCard);
+};
+
+
+
+
+
+
+
+
+
+
+
 //var LIST = ["tralalero tralala","chicken jockey","everything else"];
 
 //var BTN = document.getElementById("myButton");
@@ -18,19 +53,20 @@ alert("PLEASE LET IT WORK!!!!!!!!!!!!!!!!");
 
 
 
-
-
-var setCard = function(rank, suit) {
-const cardwidth = 10
-const cardheight = 15
-var x = -rank * cardwidth
-var y = -suit * cardheight
- var cardElement = document.getElementById('card');
- cardElement.style.backgroundPosition = `${x}rem ${y}rem`;
-};
+//var setCard = function(rank, suit,) {
+//const cardwidth = 10
+//const cardheight = 15
+//var x = -rank * cardwidth
+//var y = -suit * cardheight
+ //var cardElement = document.getElementById('card');
+ //cardElement.style.backgroundPosition = `${x}rem ${y}rem`;
+//};
 
 
 
-setCard(12, 1);
+//setCard(12, 1);
+
+
+
 
 
