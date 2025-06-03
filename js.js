@@ -1,28 +1,27 @@
-const { listen } = require("express/lib/application");
+//const { listen } = require("express/lib/application");
 
 alert("PLEASE LET IT WORK!!!!!!!!!!!!!!!!");
-var LIST = [
-{ magicMetal: silver},
-{},
-{},
-{}
+//var LIST = [{ magicMetal: silver},{},{},{}];
 
 
-];
+var TEMP = document.getElementById("temp");
+var CARD = TEMP.querySelector(".card");
+var TARGET = document.getElementById("target");
 
 
-var temp = document.getElementById("temp");
-var target = document.getElementById("target");
 
-var card = temp.querySelector(".card")
-
-
-for(var i = 0; i < LIST.length; i++) {
-    var MagicBullet = LIST[i];
-    var copyCard = card.cloneNode(true);
-    copyCard.innerHTML = MagicBullet;
-    target.append(copyCard);
+for(var i=0; i < 52; i++){
+    var cardCopy = CARD.cloneNode(true);
+    cardCopy.innerHTML = "silver"+ i;
+    cardCopy.style.backgroundPositionX = -(i) + "00%";
+    cardCopy.style.backgroundPositionY = Math.floor(i/-13) + "00%";
+    TARGET.append(cardCopy);
 };
+
+var shuffle = function() {
+console.log(Math.floor(Math.random()*52));
+
+}
 
 
 

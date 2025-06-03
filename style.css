@@ -6,13 +6,15 @@ body *{
     display: inline-block;
     position: relative; 
 }
- 
+#temp{
+    display: none;
+} 
 
 .card{
     width: 10rem;
     height: 15rem;
     background-color:blue;
     background-image: url(mine.svg);
-    background-size: 1300%;
-    background-position: -100rem -30rem;
+    background-size: 1300%; 
+    background-position: -10rem -30rem;
 }
