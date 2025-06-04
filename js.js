@@ -9,6 +9,7 @@ class player {
 constructor(_name){
 
 }
+dealMeIn
 
 }
 
@@ -46,26 +47,24 @@ make();
 }
 
 make(){
- var deck = [];
-
 for(var i = 0; i<this.cardCount; i++){
     var card = new Card(i);
-    deck.push(card);        
+    this.cards.push(card);        
 }}
 
 shuffle(){
- for (var i = 0; i < deck.length; i++){
+ for (var i = 0; i < this.cards.length; i++){
         //randomly choose a card to switch
         var rnd = Math.floor(Math.random() * deck.length)
         
         //now, the cards ae able to switch
-        var card1 = deck[i];
-        var card2 = deck[rnd]
+        var card1 = this.cards[i];
+        var card2 = this.cards[rnd]
 
-        deck[i] = card2;
-        deck[rnd] = card1;
+        this.cards[i] = card2;
+        this.cards[rnd] = card1;
     }
-return deck
+return this.cards;
 }
 }
 
