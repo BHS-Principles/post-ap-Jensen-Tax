@@ -12,7 +12,7 @@ constructor(name){
 }
 
 illustrate(){
-    var dom =document.getElementById("player_" +this.name) || document.createElement.createElement("div");
+    var dom =document.getElementById("player_" +this.name) || document.createElement("div");
     dom.classList.add("player" +this.name);
 
 }
@@ -40,6 +40,7 @@ for(var i = 0; i < this.cardCount; i++){
 
 shuffle(){
  for (var i = 0; i < this.cards.length; i++){
+
         //randomly choose a card to switch
         var rnd = Math.floor(Math.random() * this.cards.length)
         
@@ -49,8 +50,9 @@ shuffle(){
 
         this.cards[i] = card2;
         this.cards[rnd] = card1;
-    }
-return this.cards;
+        }
+        console.log(this.cards);
+        return this.cards;
 }
 deal(player){
     alert("i dealt to " + player.name);
@@ -74,7 +76,7 @@ getSuit(){
 }
 
 illustrate(target){
-    target = document.getElementById(player) || TARGET; 
+    target = target|| TARGET; 
     var cardCopy = CARD.cloneNode(true);
     //cardCopy.innerHTML = "silver"+ this.id;
     cardCopy.style.backgroundPositionX = -(this.id) + "00%";
@@ -91,7 +93,7 @@ this.state   = {};
 this.players = players; 
 this.deck    = deck;
 this.turn    = 0;
-this.play()
+this.play();
 }
 
 notOver(){
@@ -101,14 +103,26 @@ return this.turn === 1;
 
 
 chooseWinner(){
-this.winner = this.activePlayer;
-alert("we win!! " + this.activePlayer.name)
-  return this.activeplayer;  
-    };
+var p1VAL = this.players[0].hand[0].val;
+var p2VAL = this.players[1].hand[0].val;
+
+    var winner = Math.max(p1VAL, p2VAL);
+
+if (p1VAL != winner){
+    alert(this.players[1].name + " won")
+
+}    else if(p2VAL != winner){
+    alert(this.players[0].name + " won")
+
+}   else{
+    alert("it was a tie")
+};
+
+};
 
 
 
-play = function(){
+play(){
        
     alert("playing")
 //step 1: shuffle deck
@@ -125,7 +139,7 @@ for(var i = 0; i< this.players.length; i++){
 //alert("hello " + this.players[0]);
 this.deck.deal(this.players[0]);
 
-//alert("hello " + this.players[1]);
+// alert("hello " + this.players[1]);
 this.deck.deal(this.players[1]);
 //game loop
 
@@ -137,7 +151,9 @@ for (var n = 0; n< 2; n++){
     
 this.turn ++
 }
-//this.chooseWinner(p1VAL, p2VAL);
+alert(this.players[0].hand[0].val);
+alert(this.players[1].hand[0].val);
+this.chooseWinner();
 
 }
 }
